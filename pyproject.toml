@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "fastapi-template"
+version = "0.1.0"
+description = ""
+authors = ["J-Hoplin <hoplin.dev@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "scripts" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["all"], version = "^0.114.2"}
+uvicorn = {extras = ["standard"], version = "^0.30.6"}
+sqlmodel = "^0.0.22"
+
+[tool.poetry.scripts]
+start = "scripts.api:start_api"
+start-dev = "scripts.api:start_api_dev"
+db-up = "scripts.db:db_up"
+db-down = "scripts.db:db_down"
+db-console = "scripts.db:db_console"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
