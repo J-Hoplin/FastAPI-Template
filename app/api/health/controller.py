@@ -6,6 +6,7 @@ router = APIRouter(
     tags=["health"],
 )
 
-@router.get("/ping")
+
+@router.get("/")
 def server_ping():
-    return JSONResponse(content={"result": "pong"},status_code=200)
+    return JSONResponse(content={"result": "OK"}, status_code=200)
